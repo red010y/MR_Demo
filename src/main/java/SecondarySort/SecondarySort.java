@@ -13,6 +13,9 @@ import java.net.URI;
 
 public class SecondarySort {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+        //TODO  修改代码的系统变量HADOOP_USER_NAME的内容为root
+        System.setProperty("HADOOP_USER_NAME","root");
+
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration, "secondarySort");
         FileSystem fileSystem = FileSystem.get(URI.create(args[1]), configuration);

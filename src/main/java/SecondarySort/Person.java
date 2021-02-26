@@ -5,25 +5,29 @@ import org.apache.hadoop.io.WritableComparable;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
-/**
- tom	20	8000
- nancy	22	8000
- ketty	22	9000
- stone	19	10000
- green	19	11000
- white	30	29000
- socrates	29	40000
- */
+
 //序列化，比较
 public class Person implements WritableComparable<Person> {
     private String name;
     private int age;
     private int salary;
 
+    public Person() {
+    }
+
     public Person(String name, int age, int salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
     }
 
     public String getName() {
